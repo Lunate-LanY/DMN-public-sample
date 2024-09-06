@@ -1,0 +1,56 @@
+name:                DMN
+version:             0.1.0.0
+github:              "githubuser/DMN"
+license:             BSD3
+author:              "Lunate_LanY"
+maintainer:          "lunate_lany@protonmail.com"
+copyright:           "2019 Lunate_LanY"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/DMN#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- Yampa
+- vector
+- random
+- network >= 3.0
+- HTTP >= 4000.3.16
+
+library:
+  source-dirs: 
+    - src
+
+executables:
+  DMN-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -O2
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - DMN
+
+tests:
+  DMN-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -O2
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - DMN
